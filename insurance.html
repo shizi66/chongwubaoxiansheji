@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保险购买 - 蛋仔派队</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <div class="logo">蛋仔派队</div>
+                <div class="nav-links">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">公司简介</a>
+                    <a href="products.html">推荐产品</a>
+                    <a href="community.html">宠物社区</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="insurance-hero">
+            <div class="hero-content">
+                <h1 id="insurance-title">保险产品名称</h1>
+                <p>为您的爱宠提供专业的保障</p>
+            </div>
+        </section>
+
+        <section class="insurance-form">
+            <div class="form-container">
+                <h2>宠物信息</h2>
+                <form id="pet-insurance-form">
+                    <div class="form-group">
+                        <label for="pet-name">宠物名称</label>
+                        <input type="text" id="pet-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-type">宠物类型</label>
+                        <select id="pet-type" required>
+                            <option value="">请选择</option>
+                            <option value="dog">狗狗</option>
+                            <option value="cat">猫咪</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-breed">品种</label>
+                        <input type="text" id="pet-breed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-age">年龄</label>
+                        <input type="number" id="pet-age" min="0" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-weight">体重（kg）</label>
+                        <input type="number" id="pet-weight" step="0.1" min="0" required>
+                    </div>
+                </form>
+
+                <h2>保障比例选择</h2>
+                <div class="coverage-selector">
+                    <div class="coverage-slider">
+                        <input type="range" id="coverage-range" min="50" max="100" step="10" value="50">
+                        <div class="coverage-value">
+                            <span id="coverage-display">50%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>付款方式</h2>
+                <div class="payment-options">
+                    <div class="payment-toggle">
+                        <input type="radio" id="monthly" name="payment-type" value="monthly" checked>
+                        <label for="monthly">月付</label>
+                        <input type="radio" id="yearly" name="payment-type" value="yearly">
+                        <label for="yearly">年付</label>
+                    </div>
+                    <div class="payment-details">
+                        <div id="monthly-price-display">首月0.1元，次月起 <span id="regular-price">35</span>元/月</div>
+                        <div id="yearly-price-display" style="display: none;">
+                            <span class="original-price">￥<span id="original-yearly">420</span></span>
+                            <span class="discounted-price">￥<span id="discounted-yearly">378</span></span>
+                            <span class="discount-tag">9折优惠</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>基础保障</h2>
+                <div class="basic-coverage">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 基础体检</li>
+                        <li><i class="fas fa-check"></i> 疫苗服务</li>
+                        <li><i class="fas fa-check"></i> 体外驱虫服务</li>
+                    </ul>
+                </div>
+
+                <h2>增值服务选择（可选择2项）</h2>
+                <div class="additional-services">
+                    <div class="service-grid">
+                        <div class="service-item">
+                            <input type="checkbox" id="service1" name="additional-service">
+                            <label for="service1">洗澡</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service2" name="additional-service">
+                            <label for="service2">寄养服务</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service3" name="additional-service">
+                            <label for="service3">在线问诊和营养咨询</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service4" name="additional-service">
+                            <label for="service4">宠物疾病死亡保障</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service5" name="additional-service">
+                            <label for="service5">宠物生活护理</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service6" name="additional-service">
+                            <label for="service6">健康档案管理</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service7" name="additional-service">
+                            <label for="service7">宠物训练服务</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service8" name="additional-service">
+                            <label for="service8">紧急医疗转运服务</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="service9" name="additional-service">
+                            <label for="service9">老宠福利</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="submit-btn">立即投保</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>蛋仔派队致力于为您的爱宠提供专业的保险服务</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="about.html">公司简介</a></li>
+                    <li><a href="products.html">保险产品</a></li>
+                    <li><a href="community.html">宠物社区</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <p><i class="fas fa-phone"></i> 400-XXX-XXXX</p>
+                <p><i class="fas fa-envelope"></i> contact@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 蛋仔派队 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 获取URL参数
+        const urlParams = new URLSearchParams(window.location.hash.substring(1));
+        const insuranceType = urlParams.get('type') || '保险产品';
+        document.getElementById('insurance-title').textContent = insuranceType;
+
+        // 基础月费设置
+        const baseMonthlyPrices = {
+            '萌宠启航': 35,
+            '宠爱优选': 60,
+            '全家萌护': 45,
+            '长情相伴': 50
+        };
+
+        // 保障比例和价格计算
+        const coverageRange = document.getElementById('coverage-range');
+        const coverageDisplay = document.getElementById('coverage-display');
+        const regularPrice = document.getElementById('regular-price');
+        const originalYearly = document.getElementById('original-yearly');
+        const discountedYearly = document.getElementById('discounted-yearly');
+        const monthlyPriceDisplay = document.getElementById('monthly-price-display');
+        const yearlyPriceDisplay = document.getElementById('yearly-price-display');
+
+        // 设置基础月费
+        let basePrice = 35; // 默认萌宠启航的价格
+        const productName = document.getElementById('insurance-title').textContent;
+        if (baseMonthlyPrices[productName]) {
+            basePrice = baseMonthlyPrices[productName];
+        }
+
+        function updatePrices() {
+            const coverage = parseInt(coverageRange.value);
+            const priceIncrease = (coverage - 50) / 10 * 20; // 每增加10%，价格增加20%
+            const adjustedPrice = basePrice * (1 + priceIncrease / 100);
+            
+            regularPrice.textContent = adjustedPrice.toFixed(0);
+            const yearlyTotal = adjustedPrice * 12;
+            originalYearly.textContent = yearlyTotal.toFixed(0);
+            discountedYearly.textContent = (yearlyTotal * 0.9).toFixed(0);
+        }
+
+        coverageRange.addEventListener('input', function() {
+            const coverage = this.value;
+            coverageDisplay.textContent = coverage + '%';
+            updatePrices();
+        });
+
+        // 付款方式切换
+        const monthlyRadio = document.getElementById('monthly');
+        const yearlyRadio = document.getElementById('yearly');
+
+        function togglePaymentDisplay() {
+            if (monthlyRadio.checked) {
+                monthlyPriceDisplay.style.display = 'block';
+                yearlyPriceDisplay.style.display = 'none';
+            } else {
+                monthlyPriceDisplay.style.display = 'none';
+                yearlyPriceDisplay.style.display = 'block';
+            }
+        }
+
+        monthlyRadio.addEventListener('change', togglePaymentDisplay);
+        yearlyRadio.addEventListener('change', togglePaymentDisplay);
+
+        // 初始化价格显示
+        updatePrices();
+
+        // 增值服务选择限制
+        const serviceCheckboxes = document.querySelectorAll('input[name="additional-service"]');
+        let checkedCount = 0;
+
+        serviceCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkedCount++;
+                    if (checkedCount > 2) {
+                        this.checked = false;
+                        checkedCount--;
+                        alert('最多只能选择2项增值服务');
+                    }
+                } else {
+                    checkedCount--;
+                }
+            });
+        });
+
+        // 表单提交
+        document.getElementById('pet-insurance-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 这里添加表单提交逻辑
+            alert('投保申请已提交，我们将尽快处理您的申请！');
+        });
+    </script>
+</body>
+</html> 
